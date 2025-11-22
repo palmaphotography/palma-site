@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Galleries • PALMA PHOTOGRAPHY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --line: rgba(0,0,0,.1); }
+    body{margin:0;font-family:Roboto,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#000}
+    header{text-align:center;padding:2rem 1rem 1rem}
+    .brand{font-family:"Playfair Display",serif;font-weight:600;font-size:2rem;margin:0;text-transform:uppercase;letter-spacing:.04em}
+    .nav-inline{margin-top:.75rem;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase}
+    .nav-inline a{color:#000;text-decoration:none;margin:0 .6rem}
+    .nav-inline a:hover{text-decoration:underline}
+    .divider{border-top:1px solid var(--line);margin-top:1rem}
+    main{max-width:1100px;margin:0 auto;padding:2rem 1rem}
+    h2{font-family:"Playfair Display",serif;margin:0 0 .75rem 0}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+    .card{border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#fff;text-decoration:none;color:inherit;display:block}
+    .card img{width:100%;height:170px;object-fit:cover;display:block}
+    .card h3{margin:10px;font-size:1rem}
+    .muted{color:#555;margin:0 0 1.5rem 0}
+    footer{border-top:1px solid var(--line);margin-top:2rem;padding:1.5rem 1rem;text-align:center;font-size:.9rem;color:#555}
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="brand">PALMA PHOTOGRAPHY</h1>
+    <div class="nav-inline">
+      <a href="/index.html">Home</a>
+    </div>
+    <div class="divider"></div>
+  </header>
+
+  <main>
+    <h2>All Galleries</h2>
+    <p class="muted">Browse full stories below.</p>
+
+    <section class="grid">
+      <!-- 1) Smith Family -->
+      <a class="card" href="/galleries/smith-family-sunset-beach.html">
+        <img src="/assets/img/smith-family/DSC00891-Edit.jpg" alt="Smith Family at Sunset Beach">
+        <h3>Smith Family at Sunrise Beach</h3>
+      </a>
+
+      <!-- 2) Baby Noah (update cover path to your real image) -->
+      <a class="card" href="/galleries/baby-noah-home.html">
+        <img src="/assets/img/baby-noah/cover.jpg" alt="Baby Noah · At Home">
+        <h3>Noah Family · Christmas at Home</h3>
+      </a>
+
+      <!-- 3) Mia & Luca -->
+      <a class="card" href="/galleries/mia-luca-lifestyle.html">
+        <img src="/assets/img/mia-luca/cover.jpg" alt="Mia & Luca · Lifestyle Session">
+        <h3>Kate · Lifestyle Session</h3>
+      </a>
+
+      <!-- 4) Editorial / Brand -->
+      <a class="card" href="/galleries/editorial-brand.html">
+        <img src="/assets/img/editorial/cover.jpg" alt="Editorial / Brand Storytelling">
+        <h3>Kate Family · Family Session</h3>
+      </a>
+    </section>
+  </main>
+
+  <footer>© PALMA PHOTOGRAPHY</footer>
+</body>
+</html>
