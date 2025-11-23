@@ -1,69 +1,417 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>All Galleries • PALMA PHOTOGRAPHY</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PALMA PHOTOGRAPHY</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root { --line: rgba(0,0,0,.1); }
-    body{margin:0;font-family:Roboto,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#000}
-    header{text-align:center;padding:2rem 1rem 1rem}
-    .brand{font-family:"Playfair Display",serif;font-weight:600;font-size:2rem;margin:0;text-transform:uppercase;letter-spacing:.04em}
-    .nav-inline{margin-top:.75rem;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase}
-    .nav-inline a{color:#000;text-decoration:none;margin:0 .6rem}
-    .nav-inline a:hover{text-decoration:underline}
-    .divider{border-top:1px solid var(--line);margin-top:1rem}
-    main{max-width:1100px;margin:0 auto;padding:2rem 1rem}
-    h2{font-family:"Playfair Display",serif;margin:0 0 .75rem 0}
-    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-    .card{border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#fff;text-decoration:none;color:inherit;display:block}
-    .card img{width:100%;height:170px;object-fit:cover;display:block}
-    .card h3{margin:10px;font-size:1rem}
-    .muted{color:#555;margin:0 0 1.5rem 0}
-    footer{border-top:1px solid var(--line);margin-top:2rem;padding:1.5rem 1rem;text-align:center;font-size:.9rem;color:#555}
+    :root {
+      --page-bg: #ffffff;
+      --text-main: #000000;
+      --accent-line: rgba(0,0,0,0.1);
+      --accent-btn: #3cb371; /* soft green we were using */
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--page-bg);
+      color: var(--text-main);
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.5;
+    }
+
+    /* HEADER (classic: serif name, simple nav) */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: #000;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-inline {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .nav-inline a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 0.75rem;
+    }
+
+    .nav-inline a:hover {
+      text-decoration: underline;
+    }
+
+    /* subtle divider line under header */
+    .divider {
+      border-top: 1px solid var(--accent-line);
+      margin-top: 1.5rem;
+    }
+
+    /* PAGE SECTIONS */
+    section {
+      padding: 2.5rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* SECTION HEADINGS */
+    .section-heading-wrap {
+      margin-bottom: 1.5rem;
+      border-top: 1px solid var(--accent-line);
+      padding-top: 1.5rem;
+    }
+
+    .section-title {
+      margin: 0 0 0.5rem 0;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      color: #000;
+      text-transform: none; /* Not all caps anymore */
+      letter-spacing: 0;
+      text-align: left;
+    }
+
+    .section-subtext {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #000;
+      max-width: 650px;
+      line-height: 1.5;
+    }
+
+    /* ABOUT INTRO */
+    .about-block {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      font-weight: 400;
+      color: #000;
+      margin: 0;
+    }
+
+    /* GALLERY GRID */
+    .gallery-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      text-align: left;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background-color: #fff;
+    }
+
+    .shoot-meta {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      color: #000;
+    }
+
+    .shoot-title {
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 0.8rem;
+    }
+
+    .shoot-link {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .shoot-link:hover {
+      text-decoration: underline;
+    }
+
+    /* SERVICES GRID */
+    .services-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .service-card h3 {
+      margin: 0 0 0.5rem 0;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .price-line {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* CONTACT FORM */
+    form {
+      display: grid;
+      gap: 1rem;
+      max-width: 500px;
+    }
+
+    label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #000;
+    }
+
+    input,
+    textarea,
+    button {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      padding: 0.75rem;
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid var(--accent-line);
+      color: #000;
+      background-color: #fff;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #000;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: var(--accent-btn);
+      border: 1px solid transparent;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      filter: brightness(0.95);
+    }
+
+    /* CONTACT LAYOUT */
+    .contact-wrapper {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 700px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+    }
+
+    .contact-side-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #000;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      font-size: 0.8rem;
+      color: #000;
+      border-top: 1px solid var(--accent-line);
+    }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
     <h1 class="brand">PALMA PHOTOGRAPHY</h1>
+
     <div class="nav-inline">
-      <a href="/index.html">Home</a>
+      <a href="/galleries/index.html">All Galleries</a>
+      ·
+      <a href="#services">Services</a>
+      ·
+      <a href="#contact">Contact</a>
     </div>
+
     <div class="divider"></div>
   </header>
 
-  <main>
-    <h2>All Galleries</h2>
-    <p class="muted">Browse full stories below.</p>
+  <!-- ABOUT INTRO -->
+  <section id="about-top">
+    <div class="about-block">
+      <p class="about-text">
+        I create warm, natural, storytelling images for families, newborns, couples, and brands.
+        My approach is relaxed and connection-focused — no stiff posing, just honest moments.
+        Based locally and available for travel.
+      </p>
+    </div>
+  </section>
 
-    <section class="grid">
-      <!-- 1) Smith Family -->
-      <a class="card" href="/galleries/smith-family-sunset-beach.html">
-        <img src="/assets/img/smith-family/DSC00891-Edit.jpg" alt="Smith Family at Sunset Beach">
-        <h3>Smith Family at Sunrise Beach</h3>
-      </a>
+  <!-- GALLERY -->
+  <section id="galleries">
+    <div class="section-heading-wrap">
+      <h2 class="section-title">Galleries</h2>
+      <p class="section-subtext">Browse full stories below.</p>
+    </div>
 
-      <!-- 2) Baby Noah (update cover path to your real image) -->
-      <a class="card" href="/galleries/baby-noah-home.html">
-        <img src="/assets/img/baby-noah/cover.jpg" alt="Baby Noah · At Home">
-        <h3>Noah Family · Christmas at Home</h3>
-      </a>
+    <div class="gallery-grid">
 
-      <!-- 3) Mia & Luca -->
-      <a class="card" href="/galleries/mia-luca-lifestyle.html">
-        <img src="/assets/img/mia-luca/cover.jpg" alt="Mia & Luca · Lifestyle Session">
-        <h3>Kate · Lifestyle Session</h3>
-      </a>
+      <figure>
+        <img src="/assets/img/smith-family/DSC00891-Edit.jpg" alt="Family beach session at sunset" />
+        <div class="shoot-meta">
+          <div class="shoot-title">Smith Family at Sunset Beach</div>
+          <a class="shoot-link" href="/galleries/smith-family-sunset-beach.html">View full gallery →</a>
+        </div>
+      </figure>
 
-      <!-- 4) Editorial / Brand -->
-      <a class="card" href="/galleries/editorial-brand.html">
-        <img src="/assets/img/editorial/cover.jpg" alt="Editorial / Brand Storytelling">
-        <h3>Kate Family · Family Session</h3>
-      </a>
-    </section>
-  </main>
+      <figure>
+        <img src="DSC07393-Edit.jpg" alt="Newborn lifestyle session at home" />
+        <div class="shoot-meta">
+          <div class="shoot-title">Noah Family · Christmas at Home</div>
+          <a class="shoot-link" href="/galleries/baby-noah-home.html">View full gallery →</a>
+        </div>
+      </figure>
 
-  <footer>© PALMA PHOTOGRAPHY</footer>
+      <figure>
+        <img src="22.49.36.png" alt="Lifestyle couple session" />
+        <div class="shoot-meta">
+          <div class="shoot-title">Kate · Lifestyle Session</div>
+          <a class="shoot-link" href="shoot-3.html">View full gallery →</a>
+        </div>
+      </figure>
+
+      <figure>
+        <img src="Screenshot 2025-10-28 at 23.36.51.png" alt="Editorial brand shoot" />
+        <div class="shoot-meta">
+          <div class="shoot-title">Kate Family · Family Session</div>
+          <a class="shoot-link" href="shoot-4.html">View full gallery →</a>
+        </div>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- SERVICES / PRICING -->
+  <section id="services">
+    <div class="section-heading-wrap">
+      <h2 class="section-title">Services & Pricing</h2>
+      <p class="section-subtext">Sessions include edited high-resolution images in an online gallery.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Family</h3>
+        <span class="price-line">From $350</span>
+        <p>Up to 1 hour on location. Gentle direction, lots of movement, real connection. Perfect for families with young kids.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Newborn</h3>
+        <span class="price-line">From $400</span>
+        <p>Cozy, in-home, unrushed. Baby-led posing, tiny details, first cuddles. Ideal within baby's first 2–3 weeks.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Couples / Lifestyle</h3>
+        <span class="price-line">From $300</span>
+        <p>For engagements, maternity, anniversaries, or just documenting your now. Relaxed, editorial-inspired feel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-heading-wrap">
+      <h2 class="section-title">Get in touch</h2>
+      <p class="section-subtext">Tell me what you're dreaming of and I'll send availability.</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <form action="#" method="post">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <div>
+          <button type="submit">Send</button>
+        </div>
+      </form>
+
+      <div class="contact-side-text">
+        Prefer to email directly?<br />
+        palma@example.com<br /><br />
+        Available for:<br />
+        • Families<br />
+        • Newborn / fresh 48<br />
+        • Couples / maternity<br />
+        • Brand/editorial stories
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PALMA PHOTOGRAPHY. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
