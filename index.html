@@ -290,7 +290,7 @@
     <div class="about-block">
       <p class="about-text">
 Hey, I’m Alina — the heart behind Palma Photography.
-Palma was born in sunny Florida, among palm trees, beaches, and soft golden light. That’s where I first fell in love with photographing the world, and eventually, the people in it. Now I’m based in Seattle, capturing families, couples, motherhood, and portraits with that same love for warmth and connection.
+Palma was born in sunny Florida, among palm trees, beaches and soft golden light. That’s where I first fell in love with photography. Now I’m based in Seattle, capturing families, couples, motherhood, and portraits with that same love for warmth and connection.
 
 For me, photography is about how life feels — the way you reach for each other, laugh, rest, and simply exist together. I’m here for real, honest moments that feel a little like a movie scene and a lot like you.
 
@@ -401,12 +401,14 @@ You’re saving this season of your life so you can come back to it later and fe
 
         <div>
           <button type="submit">Send</button>
-        </div>
+        </div>  
+        
+        <p class="contact-form-status" id="contact-form-status" aria-live="polite"></p>
       </form>
 
       <div class="contact-side-text">
         Prefer to email directly?<br />
-        palmaph@myyahoo.com<br /><br />
+        <a href="mailto:palmaph@yahoo.com">palmaph@yahoo.com</a><br /><br />
         Available for:<br />
         • Families<br />
         • Newborn <br />
@@ -417,8 +419,37 @@ You’re saving this season of your life so you can come back to it later and fe
   </section>
 
   <footer>
-    <p>&copy; 2025 PALMA PHOTOGRAPHY. All rights reserved.</p>
+    <p>&copy; 2026 PALMA PHOTOGRAPHY. All rights reserved.</p>
   </footer>
+  <script>
+    const contactForm = document.getElementById('contact-form');
+    const contactFormStatus = document.getElementById('contact-form-status');
 
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      const name = formData.get('name').trim();
+      const email = formData.get('email').trim();
+      const message = formData.get('message').trim();
+      const subject = `Photography inquiry from ${name}`;
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        '',
+        message
+      ].join('\n');
+
+      contactFormStatus.textContent =
+        'Your email app should open with the message ready to send.';
+      window.location.href =
+        `mailto:palmaph@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+  
 </body>
 </html>
