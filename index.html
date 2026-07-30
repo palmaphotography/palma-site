@@ -125,7 +125,10 @@
 
     .gallery-grid img {
       width: 100%;
+      aspect-ratio: 4 / 5;
       height: auto;
+      object-fit: cover;
+      object-position: center;
       display: block;
       background-color: #fff;
     }
@@ -239,6 +242,13 @@
       filter: brightness(0.95);
     }
 
+    .contact-form-status {
+      min-height: 1.25rem;
+      margin: 0;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
     /* CONTACT LAYOUT */
     .contact-wrapper {
       display: grid;
@@ -256,6 +266,12 @@
       font-size: 0.9rem;
       line-height: 1.5;
       color: #000;
+    }
+
+    .contact-side-text a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
     }
 
     /* FOOTER */
@@ -290,7 +306,7 @@
     <div class="about-block">
       <p class="about-text">
 Hey, I’m Alina — the heart behind Palma Photography.
-Palma was born in sunny Florida, among palm trees, beaches and soft golden light. That’s where I first fell in love with photography. Now I’m based in Seattle, capturing families, couples, motherhood, and portraits with that same love for warmth and connection.
+Palma was born in sunny Florida, among palm trees, beaches, and soft golden light. That’s where I first fell in love with photographing the world, and eventually, the people in it. Now I’m based in Seattle, capturing families, couples, motherhood, and portraits with that same love for warmth and connection.
 
 For me, photography is about how life feels — the way you reach for each other, laugh, rest, and simply exist together. I’m here for real, honest moments that feel a little like a movie scene and a lot like you.
 
@@ -310,7 +326,7 @@ That’s what I’m here to capture.
     <div class="gallery-grid">
 
       <figure>
-        <img src="/assets/img/smith-family/DSC00891-Edit.jpg" alt="Family beach session at sunset" />
+        <img src="DSC00891-Edit.jpg" alt="Family beach session at sunset" />
         <div class="shoot-meta">
           <div class="shoot-title">Smith Family at Sunset Beach</div>
           <a class="shoot-link" href="/galleries/smith-family-sunset-beach.html">View full gallery →</a>
@@ -383,7 +399,12 @@ You’re saving this season of your life so you can come back to it later and fe
     </div>
 
     <div class="contact-wrapper">
-      <form id="contact-form">
+      <form
+        id="contact-form"
+        action="mailto:palmaph@yahoo.com"
+        method="get"
+        enctype="text/plain"
+      >
         <div>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
@@ -401,8 +422,8 @@ You’re saving this season of your life so you can come back to it later and fe
 
         <div>
           <button type="submit">Send</button>
-        </div>  
-        
+        </div>
+
         <p class="contact-form-status" id="contact-form-status" aria-live="polite"></p>
       </form>
 
@@ -421,35 +442,41 @@ You’re saving this season of your life so you can come back to it later and fe
   <footer>
     <p>&copy; 2026 PALMA PHOTOGRAPHY. All rights reserved.</p>
   </footer>
+
   <script>
     const contactForm = document.getElementById('contact-form');
     const contactFormStatus = document.getElementById('contact-form-status');
 
-    contactForm.addEventListener('submit', (event) => {
-      event.preventDefault();
+    if (contactForm) {
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
 
-      if (!contactForm.reportValidity()) {
-        return;
-      }
+        if (!contactForm.reportValidity()) {
+          return;
+        }
 
-      const formData = new FormData(contactForm);
-      const name = formData.get('name').trim();
-      const email = formData.get('email').trim();
-      const message = formData.get('message').trim();
-      const subject = `Photography inquiry from ${name}`;
-      const body = [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        '',
-        message
-      ].join('\n');
+        const formData = new FormData(contactForm);
+        const name = String(formData.get('name') || '').trim();
+        const email = String(formData.get('email') || '').trim();
+        const message = String(formData.get('message') || '').trim();
+        const subject = `Photography inquiry from ${name}`;
+        const body = [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          '',
+          message
+        ].join('\n');
 
-      contactFormStatus.textContent =
-        'Your email app should open with the message ready to send.';
-      window.location.href =
-        `mailto:palmaph@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
+        if (contactFormStatus) {
+          contactFormStatus.textContent =
+            'Your email app should open with the message ready to send.';
+        }
+
+        window.location.href =
+          `mailto:palmaph@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+    }
   </script>
-  
+
 </body>
 </html>
