@@ -19,7 +19,12 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 
+
 <style>
+/* =========================================
+   PALMA PHOTOGRAPHY — HOMEPAGE STYLE
+   ========================================= */
+
 :root {
   --paper: #f6f2ee;
   --paper-deep: #eae1d9;
@@ -33,9 +38,15 @@
   --sans: 'DM Sans', Arial, sans-serif;
 }
 
-* { box-sizing: border-box; }
+/* GENERAL */
 
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -47,10 +58,22 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { display: block; width: 100%; }
-a { color: inherit; }
-a:hover { color: var(--accent); }
-button, input, select, textarea { font: inherit; }
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
 
 :focus-visible {
   outline: 3px solid var(--focus);
@@ -71,7 +94,12 @@ button, input, select, textarea { font: inherit; }
   z-index: 100;
 }
 
-.skip:focus { left: 1rem; top: 1rem; }
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* TOP BAR AND NAVIGATION */
 
 .topline {
   font-size: .65rem;
@@ -147,12 +175,16 @@ button, input, select, textarea { font: inherit; }
   color: white;
 }
 
+/* TYPOGRAPHY */
+
 .container {
   width: min(1180px, 89%);
   margin-inline: auto;
 }
 
-.section { padding: 95px 0; }
+.section {
+  padding: 95px 0;
+}
 
 .eyebrow {
   text-transform: uppercase;
@@ -163,7 +195,9 @@ button, input, select, textarea { font: inherit; }
   margin: 0 0 16px;
 }
 
-h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3, p {
+  margin-top: 0;
+}
 
 h1, h2, h3 {
   font-family: var(--serif);
@@ -172,7 +206,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: clamp(4rem, 7.5vw, 8rem);
+  font-size: clamp(3.5rem, 5.4vw, 6.5rem);
   letter-spacing: -.035em;
   margin-bottom: 24px;
 }
@@ -183,7 +217,9 @@ h2 {
   margin-bottom: 20px;
 }
 
-h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
+h3 {
+  font-size: clamp(2.1rem, 3vw, 3rem);
+}
 
 .lead {
   font-size: 1.02rem;
@@ -191,6 +227,8 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   color: var(--muted);
   max-width: 540px;
 }
+
+/* BUTTONS */
 
 .btn {
   display: inline-flex;
@@ -250,6 +288,7 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
 }
 
 .hero-content {
+  min-width: 0;
   padding: clamp(50px, 7.5vw, 120px) 8%
            clamp(60px, 6vw, 110px)
            max(7%, calc((100vw - 1180px)/2));
@@ -264,7 +303,9 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   font-weight: 400;
 }
 
-.hero .lead { max-width: 420px; }
+.hero .lead {
+  max-width: 420px;
+}
 
 .hero-actions {
   display: flex;
@@ -332,7 +373,9 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   color: var(--muted);
 }
 
-/* PORTFOLIO */
+/* =========================================
+   PORTFOLIO — FOUR ALIGNED GALLERIES
+   ========================================= */
 
 .section-heading {
   display: flex;
@@ -342,35 +385,55 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   margin-bottom: 38px;
 }
 
-.section-heading p:last-child { margin-bottom: 10px; }
-.section-heading .lead { max-width: 430px; }
+.section-heading p:last-child {
+  margin-bottom: 10px;
+}
+
+.section-heading .lead {
+  max-width: 430px;
+}
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 17px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
 }
 
-.photo-card { min-width: 0; }
-.photo-card:nth-child(even) { padding-top: 42px; }
+.photo-card {
+  min-width: 0;
+  padding-top: 0;
+}
+
+/* Remove old staggered layout */
+.photo-card:nth-child(even) {
+  padding-top: 0;
+}
 
 .photo-card a {
   display: block;
   text-decoration: none;
 }
 
-.photo-card .photo {
-  height: 340px;
-  object-fit: cover;
-  transition: transform .35s;
-}
-
 .photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background: var(--paper-deep);
 }
 
-.photo-card a:hover .photo { transform: scale(1.025); }
+.photo-card .photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .35s ease;
+}
+
+.photo-card a:hover .photo {
+  transform: scale(1.025);
+}
 
 .photo-card h3 {
   font: 500 1.8rem/1.1 var(--serif);
@@ -378,13 +441,16 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
 }
 
 .photo-card small {
+  display: block;
   font-size: .66rem;
   letter-spacing: .17em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
-/* ABOUT ME — ONE PHOTO */
+/* =========================================
+   ABOUT ME — SINGLE PERSONAL PHOTO
+   ========================================= */
 
 .about {
   background: var(--paper-deep);
@@ -414,12 +480,14 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   transform: none;
 }
 
-/* Hide the old overlapping family photo */
+/* Hide any old secondary About photograph */
 .about-photos img:not(:first-child) {
   display: none !important;
 }
 
-.about .copy { max-width: 550px; }
+.about .copy {
+  max-width: 550px;
+}
 
 .about .copy p:not(.eyebrow) {
   color: #665950;
@@ -439,7 +507,9 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   text-align: center;
 }
 
-.offers-intro .lead { margin: auto; }
+.offers-intro .lead {
+  margin: auto;
+}
 
 .pricing {
   display: grid;
@@ -458,7 +528,9 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   min-height: 405px;
 }
 
-.package:nth-child(2) { background: #ede4db; }
+.package:nth-child(2) {
+  background: #ede4db;
+}
 
 .package-number {
   font: italic 2.25rem var(--serif);
@@ -507,7 +579,9 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
 
 /* PROCESS */
 
-.process { background: #e8dfd6; }
+.process {
+  background: #e8dfd6;
+}
 
 .process-grid {
   display: grid;
@@ -543,7 +617,9 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   gap: clamp(35px, 7vw, 100px);
 }
 
-.contact .lead { max-width: 450px; }
+.contact .lead {
+  max-width: 450px;
+}
 
 .contact-links {
   display: flex;
@@ -553,7 +629,9 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   margin-top: 23px;
 }
 
-.contact-links a { font-size: .83rem; }
+.contact-links a {
+  font-size: .83rem;
+}
 
 .fine-print {
   font-size: .75rem;
@@ -573,7 +651,9 @@ h3 { font-size: clamp(2.1rem, 3vw, 3rem); }
   gap: 7px;
 }
 
-.field.full { grid-column: 1 / -1; }
+.field.full {
+  grid-column: 1 / -1;
+}
 
 .field label {
   font-size: .64rem;
@@ -632,9 +712,13 @@ footer {
   letter-spacing: .1em;
 }
 
-footer a { text-decoration: none; }
+footer a {
+  text-decoration: none;
+}
 
-/* TABLET */
+/* =========================================
+   RESPONSIVE — TABLET
+   ========================================= */
 
 @media (max-width: 1000px) {
   .site-header {
@@ -642,54 +726,106 @@ footer a { text-decoration: none; }
     gap: 20px;
   }
 
-  .hero { min-height: auto; }
-  .hero-content { padding-left: 9%; }
-  .hero-images { min-height: 580px; }
-
-  .gallery {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .hero {
+    min-height: auto;
   }
 
-  .photo-card .photo { height: 385px; }
-  .about-grid { gap: 50px; }
+  .hero-content {
+    padding-left: 9%;
+  }
+
+  .hero-images {
+    min-height: 580px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .about-grid {
+    gap: 50px;
+  }
 }
 
-/* MOBILE */
+/* =========================================
+   RESPONSIVE — MOBILE
+   ========================================= */
 
 @media (max-width: 700px) {
-  .topline { font-size: .57rem; }
-  .site-header { padding: 22px 5%; }
-  .brand-main { font-size: 1.8rem; }
-  .nav { gap: 13px; }
-  .nav a { font-size: .58rem; }
-  .nav .nav-cta { padding: 9px 12px; }
+  .topline {
+    font-size: .57rem;
+  }
+
+  .site-header {
+    padding: 22px 5%;
+  }
+
+  .brand-main {
+    font-size: 1.8rem;
+  }
+
+  .nav {
+    gap: 13px;
+  }
+
+  .nav a {
+    font-size: .58rem;
+  }
+
+  .nav .nav-cta {
+    padding: 9px 12px;
+  }
 
   .hero {
     grid-template-columns: 1fr;
   }
 
-  .hero-content { padding: 68px 7% 55px; }
-  .hero h1 { font-size: 4.7rem; }
-  .hero-images { min-height: 480px; }
-  .hero-image-main { inset: 0 18% 0 0; }
+  .hero-content {
+    padding: 68px 7% 55px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 10vw, 4.7rem);
+  }
+
+  .hero-images {
+    min-height: 480px;
+  }
+
+  .hero-image-main {
+    inset: 0 18% 0 0;
+  }
 
   .hero-image-secondary {
     width: 40%;
     border-width: 7px;
   }
 
-  .container { width: 89%; }
-  .section { padding: 68px 0; }
-  .section-heading { display: block; }
+  .container {
+    width: 89%;
+  }
+
+  .section {
+    padding: 68px 0;
+  }
+
+  .section-heading {
+    display: block;
+  }
 
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 13px;
   }
 
-  .photo-card .photo { height: 320px; }
-  .photo-card:nth-child(even) { padding-top: 26px; }
-  .photo-card h3 { font-size: 1.5rem; }
+  .photo-card:nth-child(even) {
+    padding-top: 0;
+  }
+
+  .photo-card h3 {
+    font-size: 1.5rem;
+  }
 
   .about-grid,
   .contact {
@@ -697,28 +833,34 @@ footer a { text-decoration: none; }
   }
 
   .about-photos {
-    width: 100%;
     max-width: 490px;
     margin: 0 auto;
   }
 
-  .about-photos img:first-child {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
+  .pricing {
+    grid-template-columns: 1fr;
   }
 
-  .pricing { grid-template-columns: 1fr; }
-  .package { min-height: 0; }
+  .package {
+    min-height: 0;
+  }
 
   .process-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  .inquiry-form { grid-template-columns: 1fr; }
-  .field { grid-column: 1 / -1; }
-  .divider-quote { padding: 65px 0; }
+  .inquiry-form {
+    grid-template-columns: 1fr;
+  }
+
+  .field {
+    grid-column: 1 / -1;
+  }
+
+  .divider-quote {
+    padding: 65px 0;
+  }
 
   footer {
     text-align: center;
@@ -726,18 +868,45 @@ footer a { text-decoration: none; }
   }
 }
 
+/* SMALL PHONES */
+
 @media (max-width: 400px) {
-  .nav { gap: 9px; }
-  .nav a { font-size: .52rem; }
-  .hero h1 { font-size: 4.1rem; }
-  .photo-card .photo { height: 245px; }
-  .photo-card h3 { font-size: 1.3rem; }
+  .nav {
+    gap: 9px;
+  }
+
+  .nav a {
+    font-size: .52rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 10.5vw, 4.1rem);
+  }
+
+  .gallery {
+    gap: 10px;
+  }
+
+  .photo-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .photo-card small {
+    font-size: .58rem;
+    letter-spacing: .1em;
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+/* ACCESSIBILITY */
 
-  *, *::before, *::after {
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
     transition: none !important;
     animation: none !important;
   }
