@@ -1,78 +1,212 @@
 <!doctype html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f2ee">
+
 <title>Everyday beauty | PALMA Photography</title>
+
 <meta name="description" content="Everyday Beauty by PALMA Photography — an artistic lifestyle and portrait photography gallery with quiet details and memorable moments.">
+
 <link rel="canonical" href="https://www.palma.photography/everyday-beauty.html"><link rel="icon" href="PalmaLogoSeattle.png" type="image/png">
+
 <meta property="og:type" content="website"><meta property="og:site_name" content="PALMA Photography"><meta property="og:title" content="PALMA Photography"><meta property="og:description" content="Everyday Beauty by PALMA Photography — an artistic lifestyle and portrait photography gallery with quiet details and memorable moments."><meta property="og:url" content="https://www.palma.photography/everyday-beauty.html"><meta property="og:image" content="https://www.palma.photography/PalmaLogoSeattle.png">
+
 <meta name="twitter:card" content="summary"><meta name="twitter:title" content="PALMA Photography"><meta name="twitter:image" content="https://www.palma.photography/PalmaLogoSeattle.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
+
 :root{--paper:#f6f2ee;--deep:#eae1d9;--ink:#3d3531;--muted:#786c65;--accent:#8b6c59;--line:#d4c8bd;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+
 a{color:inherit}img{display:block;width:100%}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}::selection{background:#dac4b2;color:#2b211c}
+
 .skip{position:absolute;left:-10000px;top:auto;background:white;z-index:10}.skip:focus{left:1rem;top:1rem;padding:.6rem}
+
 .topline{border-bottom:1px solid var(--line);text-transform:uppercase;text-align:center;letter-spacing:.23em;font-size:10px;padding:9px 16px;color:var(--muted)}
+
 .site-header{display:flex;align-items:center;justify-content:space-between;gap:30px;max-width:1400px;margin:0 auto;padding:20px 5.5%}.brand{text-align:center;display:inline-flex;flex-direction:column;text-decoration:none;line-height:1;min-width:170px}.brand-main{font:500 34px/1 var(--serif);letter-spacing:.28em;padding-left:.28em}.brand-sub{font-size:9px;letter-spacing:.52em;padding-left:.52em;margin-top:8px;text-transform:uppercase}.nav{display:flex;gap:clamp(15px,2.5vw,38px);align-items:center;flex-wrap:wrap}.nav a{text-decoration:none;font-size:10px;text-transform:uppercase;letter-spacing:.17em;font-weight:600}.nav-cta{padding:12px 18px;border:1px solid var(--accent)}
+
 .eyebrow{color:var(--accent);font-size:11px;letter-spacing:.27em;text-transform:uppercase;font-weight:600;margin:0 0 18px}
+
 h1,h2,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:500;line-height:1.06}h1{font-size:clamp(3rem,5.1vw,5.6rem);letter-spacing:-.035em;margin:0 0 24px;overflow-wrap:normal}h1 em,h2 em{font-weight:400}.lead{font-size:16px;color:var(--muted);line-height:1.9;max-width:480px}
+
 .hero{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:49% 51%;min-height:580px}.hero-copy{min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:76px 7% 78px max(7%,calc((100vw - 1180px)/2))}.hero-photo{width:100%;height:100%;min-height:580px;max-height:810px;object-fit:cover;object-position:center center;background:var(--deep)}.text-link{font-size:11px;font-weight:600;text-decoration:none;letter-spacing:.18em;text-transform:uppercase;padding-bottom:5px;border-bottom:1px solid var(--accent);display:inline-block;margin-top:16px}
+
 .intro{padding:86px max(6%,calc((100vw - 1180px)/2));text-align:center}.intro p:last-child{font:italic 500 clamp(27px,3.45vw,45px)/1.26 var(--serif);max-width:760px;margin:0 auto}
+
 .container{width:min(1180px,89%);margin:0 auto}.photo-grid{columns:3;column-gap:19px;padding-bottom:104px}.gallery-item{display:inline-block;break-inside:avoid;width:100%;margin:0 0 31px}.gallery-open{display:block;width:100%;background:var(--deep);cursor:zoom-in;overflow:hidden;text-decoration:none}.gallery-open img{width:100%;height:auto;transition:transform .32s ease}.gallery-open:hover img{transform:scale(1.025)}.gallery-item figcaption{margin:10px 0 0;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);font-size:10px}.gallery-item .image-error{display:none;padding:45px 18px;color:var(--muted);font-size:13px;text-align:center}.gallery-item.is-missing img{display:none}.gallery-item.is-missing .image-error{display:block}
+
 .closing{background:var(--deep);text-align:center;padding:95px 20px}.closing h2{font-size:clamp(3rem,5.5vw,5.2rem);letter-spacing:-.03em;margin-bottom:18px}.closing>p:not(.eyebrow){max-width:520px;color:#665950;margin:0 auto 29px}.btn{background:var(--ink);color:#fff;text-decoration:none;display:inline-block;padding:16px 30px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.17em}.closing .text-link{display:block;width:max-content;margin:32px auto 0}
+
 footer{padding:32px 5.5%;display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;font-size:11px;color:var(--muted);border-top:1px solid var(--line)}footer a{text-decoration:none}
+
 .lightbox{padding:0;margin:auto;border:0;max-width:100vw;max-height:100vh;width:100vw;height:100vh;background:#151515;color:#fff}.lightbox::backdrop{background:rgba(0,0,0,.97)}.lightbox[open]{display:flex;align-items:center;justify-content:center}.lightbox-image{width:auto;max-width:calc(100vw - 135px);max-height:calc(100vh - 85px);height:auto;object-fit:contain}.lb-btn{position:absolute;color:#fff;background:rgba(30,30,30,.7);border:1px solid #777;min-width:44px;min-height:46px;cursor:pointer;font-size:27px}.lb-close{right:18px;top:16px}.lb-prev{left:18px;top:50%;transform:translateY(-50%)}.lb-next{right:18px;top:50%;transform:translateY(-50%)}.lb-counter{position:absolute;bottom:13px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.2em}
+
 @media(max-width:900px){.site-header{flex-direction:column;gap:18px}.hero-copy{padding-left:9%}.hero h1{font-size:clamp(2.8rem,5.2vw,4.8rem)}.photo-grid{columns:2}}
+
 @media(max-width:700px){.site-header{padding:22px 4%}.nav{gap:14px;justify-content:center}.nav a{font-size:9px}.hero{grid-template-columns:1fr}.hero-copy{padding:65px 7% 55px}.hero h1{font-size:clamp(3.4rem,10vw,5.3rem)}.hero-photo{min-height:450px;max-height:630px;aspect-ratio:4/5;height:auto}.intro{padding:65px 7%}.photo-grid{columns:2;column-gap:13px;padding-bottom:65px}.gallery-item{margin-bottom:23px}.closing{padding:70px 6%}.lightbox-image{max-width:calc(100vw - 32px);max-height:calc(100vh - 155px)}.lb-prev,.lb-next{top:auto;bottom:22px;transform:none}}
+
 @media(max-width:400px){.nav{gap:10px}.hero h1{font-size:clamp(3rem,11vw,4.1rem)}.photo-grid{columns:1}footer{justify-content:center;text-align:center}}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
 </style>
+
 </head>
+
 <body>
+
 <a href="#main" class="skip">Skip to content</a>
-<div class="topline">Portrait &amp; lifestyle photography · Seattle, Washington</div>
+
+<div class="topline">Portrait & lifestyle photography · Seattle, Washington</div>
+
 <header class="site-header"><a class="brand" href="index.html#top" aria-label="PALMA Photography homepage"><span class="brand-main">PALMA</span><span class="brand-sub">Photography</span></a><nav class="nav" aria-label="Main navigation"><a href="index.html#portfolio">Portfolio</a><a href="index.html#about">About</a><a href="index.html#investment">Investment</a><a class="nav-cta" href="index.html#contact">Inquire</a></nav></header>
+
 <main id="main">
+
 <section class="hero"><div class="hero-copy"><p class="eyebrow">The PALMA stories · Everyday beauty</p><h1>Beauty in the<br><em>in-between.</em></h1><p class="lead">The passing moments, unexpected details and ordinary things that become unforgettable.</p><a class="text-link" href="#gallery">Explore the gallery ↓</a></div><img class="hero-photo" src="assets/img/everyday-beauty/DCS20261025.png" alt="An expressive everyday beauty photograph by PALMA" fetchpriority="high"></section>
+
 <section class="intro"><p class="eyebrow">A story by PALMA</p><p>Not every beautiful moment asks to be noticed. Some are simply worth keeping.</p></section>
-<section class="container" id="gallery" aria-label="Everyday beauty photography gallery"><div class="photo-grid" id="gallery-grid">
-      <figure class="gallery-item" data-filename="DSC04949.jpg"><a class="gallery-open" href="assets/img/everyday-beauty/DSC04949.jpg" aria-label="Open Everyday beauty photograph 1"><img loading="lazy" decoding="async" src="assets/img/everyday-beauty/DSC04949.jpg" alt="Everyday beauty photograph 1"><span class="image-error">This photograph could not be loaded. Check its filename in GitHub.</span></a><figcaption>01 / PALMA — Everyday beauty</figcaption></figure>
-      <figure class="gallery-item" data-filename="DSC05076.jpg"><a class="gallery-open" href="assets/img/everyday-beauty/DSC05076.jpg" aria-label="Open Everyday beauty photograph 2"><img loading="lazy" decoding="async" src="assets/img/everyday-beauty/DSC05076.jpg" alt="Everyday beauty photograph 2"><span class="image-error">This photograph could not be loaded. Check its filename in GitHub.</span></a><figcaption>02 / PALMA — Everyday beauty</figcaption></figure>
-      <figure class="gallery-item" data-filename="DSC05213-Edit.jpg"><a class="gallery-open" href="assets/img/everyday-beauty/DSC05213-Edit.jpg" aria-label="Open Everyday beauty photograph 3"><img loading="lazy" decoding="async" src="assets/img/everyday-beauty/DSC05213-Edit.jpg" alt="Everyday beauty photograph 3"><span class="image-error">This photograph could not be loaded. Check its filename in GitHub.</span></a><figcaption>03 / PALMA — Everyday beauty</figcaption></figure>
-      <figure class="gallery-item" data-filename="DSC07329-Edit.jpg"><a class="gallery-open" href="assets/img/everyday-beauty/DSC07329-Edit.jpg" aria-label="Open Everyday beauty photograph 4"><img loading="lazy" decoding="async" src="assets/img/everyday-beauty/DSC07329-Edit.jpg" alt="Everyday beauty photograph 4"><span class="image-error">This photograph could not be loaded. Check its filename in GitHub.</span></a><figcaption>04 / PALMA — Everyday beauty</figcaption></figure>
-      <figure class="gallery-item" data-filename="DSC07447-Edit.jpg"><a class="gallery-open" href="assets/img/everyday-beauty/DSC07447-Edit.jpg" aria-label="Open Everyday beauty photograph 5"><img loading="lazy" decoding="async" src="assets/img/everyday-beauty/DSC07447-Edit.jpg" alt="Everyday beauty photograph 5"><span class="image-error">This photograph could not be loaded. Check its filename in GitHub.</span></a><figcaption>05 / PALMA — Everyday beauty</figcaption></figure>
-      <figure class="gallery-item" data-filename="DSC07459.jpg"><a class="gallery-open" href="assets/img/everyday-beauty/DSC07459.jpg" aria-label="Open Everyday beauty photograph 6"><img loading="lazy" decoding="async" src="assets/img/everyday-beauty/DSC07459.jpg" alt="Everyday beauty photograph 6"><span class="image-error">This photograph could not be loaded. Check its filename in GitHub.</span></a><figcaption>06 / PALMA — Everyday beauty</figcaption></figure>
-</div></section>
+
+<section class="container" id="gallery" aria-label="Everyday beauty photography gallery">
+    <div class="photo-grid" id="gallery-grid">
+      <figure class="gallery-item" data-filename="DCS20261025.png">
+        <a class="gallery-open" href="assets/img/everyday-beauty/DCS20261025.png" aria-label="Enlarge Everyday Beauty photograph 1">
+          <img src="assets/img/everyday-beauty/DCS20261025.png" alt="PALMA Everyday Beauty photograph 1" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>01 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+      <figure class="gallery-item" data-filename="DSC07329-Edit.jpg">
+        <a class="gallery-open" href="assets/img/everyday-beauty/DSC07329-Edit.jpg" aria-label="Enlarge Everyday Beauty photograph 2">
+          <img src="assets/img/everyday-beauty/DSC07329-Edit.jpg" alt="PALMA Everyday Beauty photograph 2" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>02 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+      <figure class="gallery-item" data-filename="DSC07447-Edit.jpg">
+        <a class="gallery-open" href="assets/img/everyday-beauty/DSC07447-Edit.jpg" aria-label="Enlarge Everyday Beauty photograph 3">
+          <img src="assets/img/everyday-beauty/DSC07447-Edit.jpg" alt="PALMA Everyday Beauty photograph 3" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>03 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+      <figure class="gallery-item" data-filename="DSC07459.jpg">
+        <a class="gallery-open" href="assets/img/everyday-beauty/DSC07459.jpg" aria-label="Enlarge Everyday Beauty photograph 4">
+          <img src="assets/img/everyday-beauty/DSC07459.jpg" alt="PALMA Everyday Beauty photograph 4" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>04 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+      <figure class="gallery-item" data-filename="File1.jpg">
+        <a class="gallery-open" href="assets/img/everyday-beauty/File1.jpg" aria-label="Enlarge Everyday Beauty photograph 5">
+          <img src="assets/img/everyday-beauty/File1.jpg" alt="PALMA Everyday Beauty photograph 5" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>05 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+      <figure class="gallery-item" data-filename="File2.jpg">
+        <a class="gallery-open" href="assets/img/everyday-beauty/File2.jpg" aria-label="Enlarge Everyday Beauty photograph 6">
+          <img src="assets/img/everyday-beauty/File2.jpg" alt="PALMA Everyday Beauty photograph 6" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>06 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+      <figure class="gallery-item" data-filename="File3.jpg">
+        <a class="gallery-open" href="assets/img/everyday-beauty/File3.jpg" aria-label="Enlarge Everyday Beauty photograph 7">
+          <img src="assets/img/everyday-beauty/File3.jpg" alt="PALMA Everyday Beauty photograph 7" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>07 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+      <figure class="gallery-item" data-filename="File4.jpg">
+        <a class="gallery-open" href="assets/img/everyday-beauty/File4.jpg" aria-label="Enlarge Everyday Beauty photograph 8">
+          <img src="assets/img/everyday-beauty/File4.jpg" alt="PALMA Everyday Beauty photograph 8" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>08 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+      <figure class="gallery-item" data-filename="File5.jpg">
+        <a class="gallery-open" href="assets/img/everyday-beauty/File5.jpg" aria-label="Enlarge Everyday Beauty photograph 9">
+          <img src="assets/img/everyday-beauty/File5.jpg" alt="PALMA Everyday Beauty photograph 9" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>09 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+      <figure class="gallery-item" data-filename="File6.jpg">
+        <a class="gallery-open" href="assets/img/everyday-beauty/File6.jpg" aria-label="Enlarge Everyday Beauty photograph 10">
+          <img src="assets/img/everyday-beauty/File6.jpg" alt="PALMA Everyday Beauty photograph 10" loading="lazy" decoding="async">
+          <span class="image-error">Photo unavailable. Confirm the file is committed to GitHub.</span>
+        </a>
+        <figcaption>10 / PALMA — Everyday Beauty</figcaption>
+      </figure>
+    </div>
+  </section>
+
 <section class="closing"><p class="eyebrow">For the moments that stay</p><h2>Something to<br><em>remember.</em></h2><p>For the beauty you almost missed, and the memories you want to keep.</p><a class="btn" href="index.html#contact">Inquire about a session</a><a class="text-link" href="index.html#portfolio">← Back to portfolio</a></section>
-</main><footer><span>© 2026 PALMA Photography · All rights reserved</span><span>Portrait &amp; lifestyle photography · Seattle, WA</span><a href="https://www.instagram.com/palma_ph_/" target="_blank" rel="noopener">Instagram ↗</a></footer>
+
+</main><footer><span>© 2026 PALMA Photography · All rights reserved</span><span>Portrait & lifestyle photography · Seattle, WA</span><a href="https://www.instagram.com/palma_ph_/" target="_blank" rel="noopener">Instagram ↗</a></footer>
+
 <dialog class="lightbox" id="palma-lightbox" aria-label="Enlarged PALMA photograph"><span class="lb-counter" id="lightbox-counter"></span><button class="lb-btn lb-close" id="lb-close" aria-label="Close photo viewer" type="button">×</button><button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous photograph" type="button">‹</button><img class="lightbox-image" id="lightbox-image" alt=""><button class="lb-btn lb-next" id="lb-next" aria-label="Next photograph" type="button">›</button></dialog>
+
 <script>
-(function(){
- const gallery=document.getElementById('gallery-grid'), dialog=document.getElementById('palma-lightbox'), full=document.getElementById('lightbox-image'), counter=document.getElementById('lightbox-counter');
- let active=0,lastFocus=null;
- const getCards=()=>Array.from(gallery.querySelectorAll('.gallery-item:not(.is-missing)'));
- const getAnchors=()=>getCards().map(card=>card.querySelector('.gallery-open'));
- function show(index){const items=getAnchors();if(!items.length)return;active=(index+items.length)%items.length;full.src=items[active].href;full.alt=items[active].querySelector('img').alt;counter.textContent=(active+1)+' / '+items.length;}
- gallery.addEventListener('click',event=>{const link=event.target.closest('.gallery-open');if(!link)return;event.preventDefault();lastFocus=link;const items=getAnchors();const index=items.indexOf(link);show(index<0?0:index);if(typeof dialog.showModal==='function')dialog.showModal();else window.open(link.href,'_blank','noopener');});
- document.getElementById('lb-close').addEventListener('click',()=>dialog.close());
- document.getElementById('lb-prev').addEventListener('click',()=>show(active-1));
- document.getElementById('lb-next').addEventListener('click',()=>show(active+1));
- dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
- dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();show(active-1)}if(e.key==='ArrowRight'){e.preventDefault();show(active+1)}});
- dialog.addEventListener('close',()=>{full.removeAttribute('src');lastFocus?.focus()});
- function wireImage(img){img.addEventListener('error',()=>{const card=img.closest('.gallery-item');card.classList.add('is-missing');console.warn('PALMA missing file:',img.src);});}
- gallery.querySelectorAll('.gallery-item img').forEach(wireImage);
- // Optional enhancement: discover any newly-added or obscured filenames from this PUBLIC GitHub folder.
- // The named photographs above are always visible without relying on this request.
- const owner='palmaphotography',repo='palma-site',folder="everyday-beauty";
- fetch(`https://api.github.com/repos/${owner}/${repo}/contents/assets/img/${folder}?ref=main`,{headers:{Accept:'application/vnd.github+json'}})
- .then(response=>{if(!response.ok)throw Error('GitHub folder listing unavailable');return response.json()})
- .then(entries=>{if(!Array.isArray(entries))return;const known=new Set(Array.from(gallery.querySelectorAll('[data-filename]'),e=>e.dataset.filename));const newfiles=entries.filter(e=>e.type==='file'&&/\.(jpe?g|png|webp)$/i.test(e.name)&&!known.has(e.name));
-    for(const entry of newfiles){const path=`assets/img/${folder}/${encodeURIComponent(entry.name)}`;const fig=document.createElement('figure');fig.className='gallery-item';fig.dataset.filename=entry.name;const link=document.createElement('a');link.className='gallery-open';link.href=path;link.setAttribute('aria-label','Open extra PALMA '+"Everyday beauty"+' photograph');const img=document.createElement('img');img.src=path;img.loading='lazy';img.decoding='async';img.alt="Everyday beauty"+' photograph';wireImage(img);link.appendChild(img);const fail=document.createElement('span');fail.className='image-error';fail.textContent='This photograph could not be loaded. Check its filename in GitHub.';link.appendChild(fail);const cap=document.createElement('figcaption');fig.append(link,cap);gallery.append(fig);}
-    // Preserve a predictable filename order and update numbering including any newly discovered images.
-    Array.from(gallery.children).sort((a,b)=>a.dataset.filename.localeCompare(b.dataset.filename,undefined,{numeric:true})).forEach((fig,i)=>{gallery.append(fig);fig.querySelector('figcaption').textContent=String(i+1).padStart(2,'0')+' / PALMA — '+"Everyday beauty";});
- }).catch(()=>{/* The static gallery continues to work without GitHub API access. */});
-})();
+  (function () {
+    const gallery = document.getElementById('gallery-grid');
+    const dialog = document.getElementById('palma-lightbox');
+    const full = document.getElementById('lightbox-image');
+    const counter = document.getElementById('lightbox-counter');
+    let active = 0;
+    let lastFocus = null;
+
+    function galleryLinks() {
+      return Array.from(gallery.querySelectorAll('.gallery-item:not(.is-missing) .gallery-open'));
+    }
+    function show(index) {
+      const links = galleryLinks();
+      if (!links.length) return;
+      active = (index + links.length) % links.length;
+      const link = links[active];
+      full.src = link.href;
+      full.alt = link.querySelector('img').alt;
+      counter.textContent = `${active + 1} / ${links.length}`;
+    }
+    gallery.querySelectorAll('.gallery-item img').forEach((img) => {
+      img.addEventListener('error', () => {
+        const card = img.closest('.gallery-item');
+        card.classList.add('is-missing');
+        console.warn('PALMA missing image:', img.src);
+      });
+    });
+    gallery.addEventListener('click', (event) => {
+      const link = event.target.closest('.gallery-open');
+      if (!link) return;
+      event.preventDefault();
+      lastFocus = link;
+      const index = galleryLinks().indexOf(link);
+      if (index < 0) return;
+      show(index);
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else window.open(link.href, '_blank', 'noopener');
+    });
+    document.getElementById('lb-close').addEventListener('click', () => dialog.close());
+    document.getElementById('lb-prev').addEventListener('click', () => show(active - 1));
+    document.getElementById('lb-next').addEventListener('click', () => show(active + 1));
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); show(active - 1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); show(active + 1); }
+    });
+    dialog.addEventListener('close', () => {
+      full.removeAttribute('src');
+      if (lastFocus) lastFocus.focus();
+    });
+  })();
 </script>
+
 </body></html>
